@@ -1,0 +1,18 @@
+body{font-family:Arial;background-color:#BDC3C7}
+#container{margin:20px auto;background-color:#FFFFFF}
+#header{text-align:center;padding:50px 0;font-size:1.8em;background-color:#3498DB;color:white}
+#toggle,#menu{background-color:#34495E;text-align:center}
+#toggle > span:after{color:#FFFFFF}
+#menu > li > a{color:#FFFFFF}
+#toggle:hover,#menu > li > a:hover{background-color:#283848}
+#toggle:active,#menu > li > a:active,#menu > li > a.current{background-color:#283848}
+#section{margin:20px}
+#footer{text-align:center;font-size:.8em;padding-bottom:20px}
+h2,h4,h6{color:#DF1717}
+a{color:#00A4FF}
+input[type='submit'],.button,.pagination > a{background-color:#00A4FF;color:#FFFFFF}
+input[type='submit']:hover,.button:hover,.pagination > a:hover{background-color:#0094FF}
+input[type='submit']:active,.button:active,.pagination > a:active{background-color:#0084FF}
+input[type='checkbox']:checked + label:before,input[type='radio']:checked + label:before{background-color:#00A4FF;color:#FFFFFF}
+input[type='checkbox']:hover + label:before,input[type='checkbox']:checked:active + label:before,input[type='radio']:hover + label:before{color:#FFFFFF}
+input[type='checkbox']:not(:active):checked:hover + label:before,input[type='checkbox']:active + label:before,input[type='radio']:checked:hover + label:before,input[type='radio']:not(:checked):active + label:before{background-color:#0094FF}

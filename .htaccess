@@ -1,0 +1,15 @@
+AddDefaultCharset UTF-8
+
+SetEnv SESSION_USE_TRANS_SID 0
+
+<FilesMatch "\.json$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+Options -Indexes
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?$1 [L]

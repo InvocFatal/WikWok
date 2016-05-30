@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title><?php echo self::$title; ?> | <?php echo $this -> getData(['config', 'title']); ?></title>
+        <meta charset="utf-8">
+        <meta name="description" content="<?php echo self::$description; ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="<?php echo helper::baseUrl(false); ?>core/assets/normalize.min.css">
+        <link rel="stylesheet" href="<?php echo helper::baseUrl(false); ?>core/assets/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="<?php echo helper::baseUrl(false); ?>core/assets/trumbowyg/trumbowyg.min.css">
+        <link rel="stylesheet" href="<?php echo helper::baseUrl(false); ?>core/styles.css">
+        <link rel="stylesheet" href="<?php echo helper::baseUrl(false); ?>core/theme.css">
+        <link rel="shortcut icon" href="<?php echo helper::baseUrl(false); ?>favicon.ico">
+        <?php echo $this -> css(); ?>
+    </head>
+    <body>
+        <?php echo $this -> panel() . $this -> getNotification(); ?>
+        <div id="container">
+            <h1 id="header"><?php echo $this -> getData(['config', 'title']); ?></h1>
+            <div id="toggle">
+                <span></span>
+            </div>
+            <ul id="menu">
+                <?php echo $this -> menu(); ?>
+            </ul>
+            <div id="section">
+                <h2><?php echo self::$title; ?></h2>
+                <?php echo self::$content; ?>
+            </div>
+            <div id="footer">
+                &copy; <?php echo $this -> getData(['config', 'title']); ?>. Tous droits réservés !<br>
+                <a href="<?php echo helper::baseUrl(); ?>config">Administration</a>
+            </div>
+        </div>
+        <script src="<?php echo helper::baseUrl(false); ?>core/assets/jquery.min.js"></script>
+        <script src="<?php echo helper::baseUrl(false); ?>core/assets/jquery-ui/jquery-ui.min.js"></script>
+        <script src="<?php echo helper::baseUrl(false); ?>core/assets/jquery-ui/jquery-ui.touch-punch.min.js"></script>
+        <script src="<?php echo helper::baseUrl(false); ?>core/assets/trumbowyg/trumbowyg.min.js"></script>
+        <script src="<?php echo helper::baseUrl(false); ?>core/script.js"></script>
+        <script>
+            $('.editor').trumbowyg();
+        </script>
+        <?php echo $this -> js(); ?>
+    </body>
+</html>
