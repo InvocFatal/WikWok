@@ -52,9 +52,8 @@ input[type='submit']:hover,.button:hover,.pagination > a:hover{background-color:
 input[type='submit']:active,.button:active,.pagination > a:active{background-color:#0084FF}
 textarea{height:100px;resize:none}
 label{display:block;margin-bottom:2px}
-.button{width:100%;display:inline-block;padding:10px;text-align:center;background:#DDD}
-.button:hover{background:#CCC;text-decoration:none}
-.button:active{background:#BBB}
+.button{width:100%;display:inline-block;padding:10px;text-align:center}
+.button:hover{text-decoration:none}
 .button.disabled{pointer-events:none;cursor:default;background:#EEE;color:#888}
 .pagination{padding:10px 0}
 .pagination > a{display:inline-block;padding:10px;margin:5px;text-align:center;background:#DDD;color:#444}
