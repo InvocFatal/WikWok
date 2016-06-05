@@ -675,8 +675,7 @@
                 $html .= self::getNotice($nameId);
                 $attributes['class'] .= ' notice';
             }
-            $html .= sprintf('<input type="text" %s>', self::sprintAttributes($attributes));
-            $html .= '</div>';
+            $html .= sprintf('<input type="text" %s>', self::sprintAttributes($attributes)) . '</div>';
             return $html;
         }
 
@@ -694,8 +693,7 @@
                 $html .= self::getNotice($nameId);
                 $attributes['class'] .= ' notice';
             }
-            $html .= sprintf('<textarea %s>%s</textarea>', self::sprintAttributes($attributes, ['value']), $attributes['value']);
-            $html .= '</div>';
+            $html .= sprintf('<textarea %s>%s</textarea>', self::sprintAttributes($attributes, ['value']), $attributes['value']) . '</div>';
             return $html;
         }
 
@@ -710,8 +708,7 @@
                 $html .= self::getNotice($nameId);
                 $attributes['class'] .= ' notice';
             }
-            $html .= sprintf('<input type="password" %s>', self::sprintAttributes($attributes));
-            $html .= '</div>';
+            $html .= sprintf('<input type="password" %s>', self::sprintAttributes($attributes)) . '</div>';
             return $html;
         }
 
@@ -733,8 +730,7 @@
             foreach($options as $value => $text) {
                 $html .= sprintf('<option value="%s"%s>%s</option>', $value, $attributes['selected'] === $value ? ' selected' : '', $text);
             }
-            $html .= '</select>';
-            $html .= '</div>';
+            $html .= '</select></div>';
             return $html;
         }
 
@@ -746,9 +742,7 @@
                 $html .= self::getNotice($nameId);
                 $attributes['class'] .= ' notice';
             }
-            $html .= sprintf('<input type="checkbox" id="%s" name="%s" value="%s" %s>', $nameId . '_' . $value, $nameId . '[]', $value, self::sprintAttributes($attributes));
-            $html .= self::label($nameId . '_' . $value, $label);
-            $html .= '</div>';
+            $html .= sprintf('<input type="checkbox" id="%s" name="%s" value="%s" %s>', $nameId . '_' . $value, $nameId . '[]', $value, self::sprintAttributes($attributes)) . self::label($nameId . '_' . $value, $label) . '</div>';
             return $html;
         }
 
@@ -760,33 +754,25 @@
                 $html .= self::getNotice($nameId);
                 $attributes['class'] .= ' notice';
             }
-            $html .= sprintf('<input type="radio" id="%s" name="%s" value="%s" %s>', $nameId . '_' . $value, $nameId . '[]', $value, self::sprintAttributes($attributes));
-            $html .= self::label($nameId . '_' . $value, $label);
-            $html .= '</div>';
+            $html .= sprintf('<input type="radio" id="%s" name="%s" value="%s" %s>', $nameId . '_' . $value, $nameId . '[]', $value, self::sprintAttributes($attributes)) . self::label($nameId . '_' . $value, $label) . '</div>';
             return $html;
         }
 
         public static function submit($nameId, array $attributes = []) {
             $attributes = array_merge(['id' => $nameId, 'name' => $nameId, 'value' => 'Enregistrer', 'disabled' => '', 'class' => '', 'col' => 12, 'offset' => 0], $attributes);
-            $html = '<div class="col' . $attributes['col'] . ' offset' . $attributes['offset'] . '">';
-            $html .= sprintf('<input type="submit" value="%s" %s>', $attributes['value'], self::sprintAttributes($attributes, ['value']));
-            $html .= '</div>';
+            $html = '<div class="col' . $attributes['col'] . ' offset' . $attributes['offset'] . '">' . sprintf('<input type="submit" value="%s" %s>', $attributes['value'], self::sprintAttributes($attributes, ['value'])) . '</div>';
             return $html;
         }
 
         public static function button($nameId, array $attributes = []) {
             $attributes = array_merge(['id' => $nameId, 'name' => $nameId, 'value' => 'Bouton', 'href' => 'javascript:void(0);', 'target' => '', 'onclick' => '', 'disabled' => '', 'class' => '', 'col' => 12, 'offset' => 0], $attributes);
-            $html = '<div class="col' . $attributes['col'] . ' offset' . $attributes['offset'] . '">';
-            $html .= sprintf('<a %s class="button %s %s">%s</a>', self::sprintAttributes($attributes, ['value', 'class', 'disabled']), $attributes['disabled'] ? 'disabled' : '', $attributes['class'], $attributes['value']);
-            $html .= '</div>';
+            $html = '<div class="col' . $attributes['col'] . ' offset' . $attributes['offset'] . '">' . sprintf('<a %s class="button %s %s">%s</a>', self::sprintAttributes($attributes, ['value', 'class', 'disabled']), $attributes['disabled'] ? 'disabled' : '', $attributes['class'], $attributes['value']) . '</div>';
             return $html;
         }
 
         public static function background($text, array $attributes = []) {
             $attributes = array_merge(['class' => '', 'col' => 12, 'offset' => 0], $attributes);
-            $html = '<div class="col' . $attributes['col'] . ' offset' . $attributes['offset'] . '">';
-            $html .= '<div class="background ' . $attributes['class']. '">' . $text . '</div>';
-            $html .= '</div>';
+            $html = '<div class="col' . $attributes['col'] . ' offset' . $attributes['offset'] . '"><div class="background ' . $attributes['class']. '">' . $text . '</div></div>';
             return $html;
         }
     }
